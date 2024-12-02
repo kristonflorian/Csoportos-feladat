@@ -14,7 +14,7 @@ CREATE TABLE machines (
 );
 
 CREATE TABLE users (
-  fid int NOT NULL,
+  fid int NOT NULL AUTO_INCREMENT,
   username varchar(30) NOT NULL,
   pass varchar(125) NOT NULL,
   useraddress varchar(100),
@@ -25,7 +25,7 @@ CREATE TABLE users (
   CONSTRAINT fk_userssquat FOREIGN KEY (zipcode) REFERENCES squattage(zipcode)
 );
 CREATE TABLE achivements(
-  aid int NOT NULL,
+  aid int NOT NULL AUTO_INCREMENT,
   acname varchar(75),
   requirements int,
   CONSTRAINT pk_achivements PRIMARY KEY (aid)
