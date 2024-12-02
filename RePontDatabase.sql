@@ -11,6 +11,7 @@ CREATE TABLE machines (
   machineaddress varchar(100),
   CONSTRAINT pk_machines PRIMARY KEY (gid),
   CONSTRAINT fk_machinesquat FOREIGN KEY (zipcode) REFERENCES squattage(zipcode)
+  CONSTRAINT ck_machine_fill_range CHECK (fillpercentage >= 0 AND fillpercentage <= 100)
 );
 
 CREATE TABLE users (
