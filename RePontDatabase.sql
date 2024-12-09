@@ -1,6 +1,6 @@
-﻿create TABLE squattage (
+﻿create TABLE settlement (
   zipcode int NOT NULL,
-  squattagename varchar(75),
+  settlementname varchar(75),
   CONSTRAINT pk_squattage PRIMARY KEY (zipcode)
 );
 
@@ -10,7 +10,7 @@ CREATE TABLE machines (
   fillpercentage int,
   machineaddress varchar(100),
   CONSTRAINT pk_machines PRIMARY KEY (gid),
-  CONSTRAINT fk_machinesquat FOREIGN KEY (zipcode) REFERENCES squattage(zipcode)
+  CONSTRAINT fk_machinesquat FOREIGN KEY (zipcode) REFERENCES squattage(zipcode),
   CONSTRAINT ck_machine_fill_range CHECK (fillpercentage >= 0 AND fillpercentage <= 100)
 );
 

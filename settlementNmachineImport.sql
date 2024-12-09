@@ -1,4 +1,4 @@
-INSERT INTO squattage(zipcode,squattagename) VALUES
+INSERT INTO settlement(zipcode,settlementname) VALUES
 (4336,"Őr"),
 (2600,"Vác"),
 (2030,"Érd"),
