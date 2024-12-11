@@ -1,6 +1,6 @@
 ﻿create TABLE settlement (
   zipcode int NOT NULL,
-  settlementname varchar(75),
+  settlementname varchar(75) NOT NULL,
   CONSTRAINT pk_settlement PRIMARY KEY (zipcode)
 );
 
@@ -8,7 +8,7 @@ CREATE TABLE machines (
   gid int NOT NULL AUTO_INCREMENT,
   zipcode int NOT NULL,
   fillpercentage int,
-  machineaddress varchar(100),
+  machineaddress varchar(100) NOT NULL,
   CONSTRAINT pk_machines PRIMARY KEY (gid),
   CONSTRAINT fk_machinesquat FOREIGN KEY (zipcode) REFERENCES settlement(zipcode),
   CONSTRAINT ck_machine_fill_range CHECK (fillpercentage >= 0 AND fillpercentage <= 100)
@@ -19,7 +19,7 @@ CREATE TABLE users (
   username varchar(30) NOT NULL,
   pass varchar(125) NOT NULL,
   useraddress varchar(100),
-  zipcode int,
+  zipcode int NOT NULL,
   bottlecount int NOT NULL,
   achivements varchar(250),
   CONSTRAINT pk_users PRIMARY KEY (fid),
@@ -28,7 +28,7 @@ CREATE TABLE users (
 CREATE TABLE achivements(
   aid int NOT NULL AUTO_INCREMENT,
   acname varchar(75),
-  requirements int,
+  requirements int NOT NULL,
   CONSTRAINT pk_achivements PRIMARY KEY (aid)
 );
 
