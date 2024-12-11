@@ -1,5 +1,5 @@
 ﻿create TABLE settlement (
-  zipcode int NOT NULL,
+  zipcode int NOT NULL UNIQUE,
   settlementname varchar(75) NOT NULL,
   CONSTRAINT pk_settlement PRIMARY KEY (zipcode)
 );
@@ -16,7 +16,7 @@ CREATE TABLE machines (
 
 CREATE TABLE users (
   fid int NOT NULL AUTO_INCREMENT,
-  username varchar(30) NOT NULL,
+  username varchar(30) NOT NULL UNIQUE,
   pass varchar(125) NOT NULL,
   useraddress varchar(100),
   zipcode int NOT NULL,
