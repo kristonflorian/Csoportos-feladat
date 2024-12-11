@@ -1,4 +1,4 @@
-INSERT INTO settlement(zipcode,settlementname) VALUES
+INSERT INTO settlements(zipcode,settlementname) VALUES
 (4336,"Őr"),
 (2600,"Vác"),
 (2030,"Érd"),
