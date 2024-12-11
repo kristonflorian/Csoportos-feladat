@@ -1,8 +1,3 @@
-        // INIT
-        var myString   = "blablabla Card game bla";
-        var myPassword = "myPassword";
-        
-        // PROCESS
         document.getElementById('encbutton').addEventListener('click',function () {
             
         var myString   = document.getElementById('originalstring').value;
