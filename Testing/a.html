@@ -7,17 +7,18 @@ THIS IS JUST A THEORY, IT MAY NOT BE IMPLEMENTED
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="test.js" defer></script>
-    <script src="test2.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="debug.js" defer></script>
 </head>
 <body>
-    <input type="text" id="achievement" placeholder="Achivement Name Here">
-    <input type="button" value="Generate Hash" id="button">
-    <p>The Hash to store is this: <span id="md5hash"></span></p>
+    <input type="text" id="originalstring" placeholder="Achivement Name Here (ONLY NEEDED FOR ENCRYPTION)">
+    <input type="text" id="password" placeholder="Encryption Pass Here">
+    <input type="button" value="Encrypt File" id="encbutton">
+    <p>Encrypted Text: <span id="encryptedtext"></span></p>
     <br>
-    <input type="text" id="key" placeholder="Achivement Name Here">
-    <input type="text" id="pass" placeholder="Achivement Name Here">
-    <input type="button" value="Generate encryption" id="button">
-    <p>The Hash to store is this: <span id="md5hash"></span></p>
+    <input type="text" id="encryptedstoragetext" placeholder="Place Encrypted String Here">
+    <input type="text" id="password1" placeholder="Encryption Pass Here">
+    <input type="button" value="Decrypt File" id="decbutton">
+    <p>Decrypted Text: <span id="decryptedtext"></span></p>
 </body>
 </html>
