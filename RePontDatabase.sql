@@ -18,6 +18,7 @@ CREATE TABLE users (
   fid int NOT NULL AUTO_INCREMENT,
   username varchar(30) NOT NULL UNIQUE,
   pass varchar(125) NOT NULL,
+  email varchar(65) NOT NULL UNIQUE
   useraddress varchar(100),
   zipcode int NOT NULL,
   bottlecount int NOT NULL,
