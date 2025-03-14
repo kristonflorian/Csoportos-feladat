@@ -1,7 +1,14 @@
+CREATE TABLE counties(
+ cid int NOT NULL AUTO_INCREMENT,
+ countyname varchar(30),
+ CONSTRAINT pk_counties PRIMARY KEY (cid),
+);
 create TABLE settlements (
   zipcode int NOT NULL UNIQUE,
   settlementname varchar(75) NOT NULL,
-  CONSTRAINT pk_settlements PRIMARY KEY (zipcode)
+  countyid int NOT NULL,
+  CONSTRAINT pk_settlements PRIMARY KEY (zipcode),
+  CONSTRAINT fk_settlementcounty FOREIGN KEY (countyid) REFERENCES counties(cid)
 );
 
 CREATE TABLE machines (
@@ -32,18 +39,3 @@ CREATE TABLE achivements(
   requirements int NOT NULL,
   CONSTRAINT pk_achivements PRIMARY KEY (aid)
 );
-
-INSERT INTO achivements VALUES
-(1,"Gyűjts össze 25 flakont!",25),
-(2,"Gyűjts össze 50 flakont!",50),
-(3,"Gyűjts össze 75 flakont!",75),
-(4,"Gyűjts össze 100 flakont!",100),
-(5,"Gyűjts össze 125 flakont!",125),
-(6,"Gyűjts össze 150 flakont!",150),
-(7,"Gyűjts össze 175 flakont!",175),
-(8,"Gyűjts össze 200 flakont!",200),
-(9,"Gyűjts össze 225 flakont!",225),
-(10,"Gyűjts össze 250 flakont!",250),
-(11,"Gyűjts össze 275 flakont!",275),
-(12,"Gyűjts össze 300 flakont!",300),
-(13,"Gyűjts össze 325 flakont!",325);
