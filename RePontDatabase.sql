@@ -8,7 +8,7 @@ create TABLE settlements (
   settlementname varchar(75) NOT NULL,
   county int NOT NULL,
   CONSTRAINT pk_settlements PRIMARY KEY (zipcode),
-  CONSTRAINT fk_settlementcounty FOREIGN KEY (countyid) REFERENCES counties(cid)
+  CONSTRAINT fk_settlementcounty FOREIGN KEY (county) REFERENCES counties(cid)
 );
 
 CREATE TABLE machines (
