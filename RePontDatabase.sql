@@ -6,7 +6,7 @@ CREATE TABLE counties(
 create TABLE settlements (
   zipcode int NOT NULL UNIQUE,
   settlementname varchar(75) NOT NULL,
-  countyid int NOT NULL,
+  county int NOT NULL,
   CONSTRAINT pk_settlements PRIMARY KEY (zipcode),
   CONSTRAINT fk_settlementcounty FOREIGN KEY (countyid) REFERENCES counties(cid)
 );
