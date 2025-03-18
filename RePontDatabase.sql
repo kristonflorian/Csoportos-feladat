@@ -1,7 +1,7 @@
 CREATE TABLE counties(
  cid int NOT NULL AUTO_INCREMENT,
  countyname varchar(30) UNIQUE NOT NULL,
- CONSTRAINT pk_counties PRIMARY KEY (cid),
+ CONSTRAINT pk_counties PRIMARY KEY (cid)
 );
 create TABLE settlements (
   zipcode int NOT NULL UNIQUE,
@@ -25,7 +25,7 @@ CREATE TABLE users (
   fid int NOT NULL AUTO_INCREMENT,
   username varchar(30) NOT NULL UNIQUE,
   pass varchar(125) NOT NULL,
-  email varchar(65) NOT NULL UNIQUE
+  email varchar(65) NOT NULL UNIQUE,
   useraddress varchar(100),
   zipcode int NOT NULL,
   bottlecount int NOT NULL,
