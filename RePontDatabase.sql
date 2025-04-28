@@ -1,6 +1,6 @@
 CREATE TABLE counties(
  cid int NOT NULL AUTO_INCREMENT,
- countyname varchar(30),
+ countyname varchar(30) UNIQUE NOT NULL,
  CONSTRAINT pk_counties PRIMARY KEY (cid),
 );
 create TABLE settlements (
