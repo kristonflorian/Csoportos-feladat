@@ -1,12 +1,12 @@
 CREATE TABLE counties(
  cid int NOT NULL AUTO_INCREMENT,
  countyname varchar(30) UNIQUE NOT NULL,
- CONSTRAINT pk_counties PRIMARY KEY (cid),
+ CONSTRAINT pk_counties PRIMARY KEY (cid)
 );
 create TABLE settlements (
   zipcode int NOT NULL UNIQUE,
   settlementname varchar(75) NOT NULL,
-  countyid int NOT NULL,
+  county int NOT NULL,
   CONSTRAINT pk_settlements PRIMARY KEY (zipcode),
   CONSTRAINT fk_settlementcounty FOREIGN KEY (county) REFERENCES counties(cid)
 );
@@ -25,11 +25,13 @@ CREATE TABLE users (
   fid int NOT NULL AUTO_INCREMENT,
   username varchar(30) NOT NULL UNIQUE,
   pass varchar(125) NOT NULL,
-  useraddress varchar(100),
+  email varchar(65) NOT NULL UNIQUE,
+  alltimebottlecount bigint(20),
   zipcode int NOT NULL,
   bottlecount int NOT NULL,
-  achivements varchar(250),
+  achivements int NOT NULL,
   CONSTRAINT pk_users PRIMARY KEY (fid),
+  CONSTRAINT fk_userachivement FOREIGN KEY (achivements) REFERENCES achivements(aid);
   CONSTRAINT fk_usersset FOREIGN KEY (zipcode) REFERENCES settlements(zipcode)
 );
 CREATE TABLE achivements(
